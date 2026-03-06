@@ -13,6 +13,57 @@
         android:theme="@style/Theme.Ecole_des_loustiques_Michaud_Clement"
         tools:targetApi="31">
         <activity
+            android:name=".CorrigermultiplicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FauxmultiplicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReussimultiplicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CorrigeradditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FauxadditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReussiadditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CorrigerCapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FauxCapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReussiCapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExercicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".accueilnoncoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccueilcoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeconnecterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CréerCompteActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
     </application>
