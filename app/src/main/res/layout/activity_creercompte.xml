@@ -9,9 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="30dp">
+        android:paddingBottom="40dp">
 
         <TextView
+            android:id="@+id/headerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#E1BEE7"
@@ -25,93 +26,66 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Créer compte"
+            android:textColor="#2C3E50"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Résultats"
+            android:text="Nom d’utilisateur"
             android:textColor="#2C3E50"
-            android:textSize="32sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Aïe tu as .. d’erreurs"
-            android:textColor="#2C3E50"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Voici le corriger"
-            android:textColor="#2C3E50"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="Ton prénom ici"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
-            android:text="Australie"
+            android:text="Mot de passe"
+            android:textColor="#2C3E50"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="5dp"
             android:background="@android:drawable/edit_text"
-            android:gravity="center_vertical"
-            android:paddingStart="10dp"
-            android:text="Canberra" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:text="Australie"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="50dp"
-            android:background="@android:drawable/edit_text"
-            android:gravity="center_vertical"
-            android:paddingStart="10dp"
-            android:text="Canberra" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:text="Australie"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="50dp"
-            android:background="@android:drawable/edit_text"
-            android:gravity="center_vertical"
-            android:paddingStart="10dp"
-            android:text="Canberra" />
+            android:hint="**********"
+            android:inputType="textPassword"
+            android:padding="10dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRetourDepuisErreur"
+            android:id="@+id/btnSubmitAccount"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginHorizontal="60dp"
+            android:layout_marginHorizontal="70dp"
             android:layout_marginTop="40dp"
             android:backgroundTint="#BA68C8"
-            android:text="Choisir une autre activité"
+            android:text="Créer compte"
             android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             app:cornerRadius="8dp" />
 
     </LinearLayout>
