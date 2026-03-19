@@ -1,77 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/main"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="30dp">
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:padding="40dp"
+        android:text="Ecole des loustics"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/headerTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#E1BEE7"
-            android:gravity="center"
-            android:padding="40dp"
-            android:text="Ecole des loustics"
-            android:textColor="#2C3E50"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Joue et défie tes capacités"
+        android:textColor="#2C3E50"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
-            android:text="Joue et défie tes capacités"
-            android:textColor="#2C3E50"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Comptes élèves"
+        android:textColor="#2C3E50"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:text="Comptes élèves"
-            android:textColor="#2C3E50"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMomo"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="60dp"
-            android:layout_marginTop="8dp"
-            android:text="Momo"
-            android:textAllCaps="false"
-            android:textColor="#BA68C8"
-            app:cornerRadius="8dp"
-            app:strokeColor="#BA68C8"
-            app:strokeWidth="2dp" />
+    <ListView
+        android:id="@+id/listUsers"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:background="#F3E5F5" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRyan"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="60dp"
-            android:layout_marginTop="8dp"
-            android:text="Ryan"
-            android:textAllCaps="false"
-            android:textColor="#BA68C8"
-            app:cornerRadius="8dp"
-            app:strokeColor="#BA68C8"
-            app:strokeWidth="2dp" />
-
-        <TextView
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -91,9 +65,7 @@
             android:text="Anonyme"
             android:textAllCaps="false"
             android:textColor="#BA68C8"
-            app:cornerRadius="8dp"
-            app:strokeColor="#BA68C8"
-            app:strokeWidth="2dp" />
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,7 +87,6 @@
             android:text="Créer compte"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            app:cornerRadius="8dp" />
+            />
 
     </LinearLayout>
-</ScrollView>

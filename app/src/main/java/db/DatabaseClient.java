@@ -45,16 +45,12 @@ public class DatabaseClient {
 
     // Objet permettant de populate (remplir) la base de données à sa création
     RoomDatabase.Callback roomDatabaseCallback = new RoomDatabase.Callback() {
-
-        // Called when the database is created for the first time.
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-
-            //
-            db.execSQL("INSERT INTO task (libelle, description) VALUES(\"tâche 1\", \"installer la librairie Room\");");
-            db.execSQL("INSERT INTO task (libelle, description) VALUES(\"tâche 2\", \" Créer DatabaseClient\");");
-
+            // On insère un élève fictif pour tester [cite: 71]
+            db.execSQL("INSERT INTO utilisateur (nom, prenom) VALUES('Michaud', 'Clement');");
         }
     };
 }
+

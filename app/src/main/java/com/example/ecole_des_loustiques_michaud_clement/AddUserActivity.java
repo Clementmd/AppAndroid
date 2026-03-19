@@ -1,5 +1,6 @@
 package com.example.ecole_des_loustiques_michaud_clement;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -19,11 +20,11 @@ public class AddUserActivity extends AppCompatActivity {
     private DatabaseClient mDb;
 
     // VIEW
-    private EditText editTextTaskView;
-    private EditText editTextDescriptionView;
-    private EditText editTextFinishByView;
-    private Button saveView;
+    private EditText etUsername;
+    private EditText etPrenom;
+    private Button btnSubmitAccount;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,62 +34,55 @@ public class AddUserActivity extends AppCompatActivity {
         mDb = DatabaseClient.getInstance(getApplicationContext());
 
         // Récupérer les vues
-        editTextTaskView = findViewById(R.id.etUsername);
-        editTextDescriptionView = findViewById(R.id.etPassword);
-        saveView = findViewById(R.id.btnSubmitAccount);
+        etUsername = findViewById(R.id.etUsername);
+        etPrenom = findViewById(R.id.etPrenom);
+        btnSubmitAccount = findViewById(R.id.btnSubmitAccount);
 
         // Associer un événement au bouton save
-        saveView.setOnClickListener(new View.OnClickListener() {
+        btnSubmitAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveTask();
+                saveUser();
             }
         });
     }
 
-    private void saveTask() {
+    private void saveUser() {
 
         // Récupérer les informations contenues dans les vues
-        final String sTask = editTextTaskView.getText().toString().trim();
-        final String sDesc = editTextDescriptionView.getText().toString().trim();
+        final String sUser = etUsername.getText().toString().trim();
+        final String sPrenom = etPrenom.getText().toString().trim();
 
         // Vérifier les informations fournies par l'utilisateur
-        if (sTask.isEmpty()) {
-            editTextTaskView.setError("Task required");
-            editTextTaskView.requestFocus();
+        if (sUser.isEmpty()) {
+            etUsername.setError("Task required");
+            etUsername.requestFocus();
             return;
         }
 
-        if (sDesc.isEmpty()) {
-            editTextDescriptionView.setError("Desc required");
-            editTextDescriptionView.requestFocus();
+        if (sPrenom.isEmpty()) {
+            etPrenom.setError("Prenom requis");
+            etPrenom.requestFocus();
             return;
         }
 
         /**
          * Création d'une classe asynchrone pour sauvegarder la tache donnée par l'utilisateur
          */
-        class SaveTask extends AsyncTask<Void, Void, User> {
+        class SaveUser extends AsyncTask<Void, Void, User> {
 
             @Override
             protected User doInBackground(Void... voids) {
-
-                // creating a task
                 User user = new User();
-                user.setLibelle(sTask);
-                task.setDescription(sDesc);
+                user.setNom(sUser);   // sUser est déjà un String
+                user.setPrenom(sPrenom);
 
-                // adding to database
-                long id = mDb.getAppDatabase()
+                // Ajout à la base de données
+                mDb.getAppDatabase()
                         .UserDao()
-                        .insert(task);
+                        .insert(user);
 
-                // mettre à jour l'id de la tache
-                // Nécessaire si on souhaite avoir accès à l'id plus tard dans l'activité
-                task.setId(id);
-
-
-                return task;
+                return user;
             }
 
             @Override
@@ -104,8 +98,8 @@ public class AddUserActivity extends AppCompatActivity {
 
         //////////////////////////
         // IMPORTANT bien penser à executer la demande asynchrone
-        SaveTask st = new SaveTask();
-        st.execute();
+        SaveUser ur = new SaveUser();
+        ur.execute();
     }
 
 }

@@ -5,24 +5,20 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "utilisateur")
 public class User {
-    @PrimaryKey
-    private long nom;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
-    private long prenom;
+    private String nom;
+    private String prenom;
 
-    public long getNom() {
-        return nom;
-    }
+    // Getters et Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public long getPrenom() {
-        return prenom;
-    }
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
 
-    public void setNom(long nom) {
-        this.nom = nom;
-    }
-
-    public void setPrenom(long prenom) {
-        this.prenom = prenom;
-    }
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
 }
+
