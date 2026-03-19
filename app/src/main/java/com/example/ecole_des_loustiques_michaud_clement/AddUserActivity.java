@@ -74,10 +74,9 @@ public class AddUserActivity extends AppCompatActivity {
             @Override
             protected User doInBackground(Void... voids) {
                 User user = new User();
-                user.setNom(sUser);   // sUser est déjà un String
+                user.setNom(sUser);
                 user.setPrenom(sPrenom);
 
-                // Ajout à la base de données
                 mDb.getAppDatabase()
                         .UserDao()
                         .insert(user);
@@ -89,7 +88,6 @@ public class AddUserActivity extends AppCompatActivity {
             protected void onPostExecute(User user) {
                 super.onPostExecute(user);
 
-                // Quand la tache est créée, on arrête l'activité AddTaskActivity (on l'enleve de la pile d'activités)
                 setResult(RESULT_OK);
                 finish();
                 Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
