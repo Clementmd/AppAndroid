@@ -21,42 +21,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FauxmultiplicationActivity"
+            android:name=".Multiplication.FauxmultiplicationActivity"
             android:exported="false" />
         <activity
-            android:name=".ReussimultiplicationActivity"
+            android:name=".Multiplication.ReussimultiplicationActivity"
             android:exported="false" />
         <activity
-            android:name=".MultiplicationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".FauxadditionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ReussiadditionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdditionActivity"
+            android:name=".Multiplication.MultiplicationActivity"
             android:exported="false" />
 
         <activity
-            android:name=".FauxCapitaleActivity"
+            android:name=".Addition.FauxadditionActivity"
             android:exported="false" />
         <activity
-            android:name=".ReussiCapitaleActivity"
+            android:name=".Addition.ReussiadditionActivity"
             android:exported="false" />
         <activity
-            android:name=".CapitaleActivity"
+            android:name=".Addition.AdditionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Capitale.FauxCapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Capitale.ReussiCapitaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Capitale.CapitaleActivity"
             android:exported="false" />
         <activity
             android:name=".ExercicesActivity"
             android:exported="false" />
         <activity
-            android:name=".accueilnoncoActivity"
+            android:name=".Accueil.accueilnoncoActivity"
             android:exported="false" />
         <activity
-            android:name=".AccueilcoActivity"
+            android:name=".Accueil.AccueilcoActivity"
             android:exported="false" />
         <activity
             android:name=".SeconnecterActivity"

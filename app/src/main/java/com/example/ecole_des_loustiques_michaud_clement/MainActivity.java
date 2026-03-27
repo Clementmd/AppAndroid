@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ecole_des_loustiques_michaud_clement.Accueil.AccueilcoActivity;
+import com.example.ecole_des_loustiques_michaud_clement.Accueil.accueilnoncoActivity;
+
 import java.util.List;
 import db.DatabaseClient;
 import db.User;
@@ -34,15 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCreerCompte.setOnClickListener(this);
         btnAnonyme.setOnClickListener(this);
 
-        // Clic sur un utilisateur de la liste
         listUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 User user = (User) listUsers.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, "Content de te revoir " + user.getPrenom(), Toast.LENGTH_SHORT).show();
 
-                // Redirection vers ton écran de sélection (Maths/Géo)
-                lancerAccueilNonCo();
+                lancerAccueilCo(user.getPrenom());
             }
         });
 
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getUsers();
     }
 
-    // Le gros onClick avec des if
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -69,8 +69,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Méthode pour éviter de répéter le code de navigation
     private void lancerAccueilNonCo() {
-        // Remplace 'ChoixActivity' par le nom de ton fichier pour l'écran de sélection
         Intent intent = new Intent(MainActivity.this, accueilnoncoActivity.class);
+        startActivity(intent);
+    }
+
+    private void lancerAccueilCo(String prenom) {
+        Intent intent = new Intent(MainActivity.this, AccueilcoActivity.class);
+        intent.putExtra("USER_PRENOM", prenom);
         startActivity(intent);
     }
 

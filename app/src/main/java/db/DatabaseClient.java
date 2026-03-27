@@ -1,8 +1,6 @@
 package db;
 
-
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -10,27 +8,16 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 public class DatabaseClient {
 
-    // Instance unique permettant de faire le lien avec la base de données
     private static DatabaseClient instance;
-
-    // Objet représentant la base de données de votre application
     private AppDatabase appDatabase;
 
-    // Constructeur
     private DatabaseClient(final Context context) {
-
-        // Créer l'objet représentant la base de données de votre application
-        // à l'aide du "Room database builder"
-        // MyToDos est le nom de la base de données
-        //appDatabase = Room.databaseBuilder(context, AppDatabase.class, "MyToDos").build();
-
-        ////////// REMPLIR LA BD à la première création à l'aide de l'objet roomDatabaseCallback
-        // Ajout de la méthode addCallback permettant de populate (remplir) la base de données à sa création
-        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "EcoleDesLoustics").addCallback(roomDatabaseCallback).build();
+        // On construit la base "EcoleDesLoustics" avec le callback de remplissage
+        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "EcoleDesLoustics")
+                .addCallback(roomDatabaseCallback)
+                .build();
     }
 
-    // Méthode statique
-    // Retourne l'instance de l'objet DatabaseClient
     public static synchronized DatabaseClient getInstance(Context context) {
         if (instance == null) {
             instance = new DatabaseClient(context);
@@ -38,19 +25,43 @@ public class DatabaseClient {
         return instance;
     }
 
-    // Retourne l'objet représentant la base de données de votre application
     public AppDatabase getAppDatabase() {
         return appDatabase;
     }
 
-    // Objet permettant de populate (remplir) la base de données à sa création
+    // --- LE REMPLISSAGE AUTOMATIQUE ---
     RoomDatabase.Callback roomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            // On insère un élève fictif pour tester [cite: 71]
-            db.execSQL("INSERT INTO utilisateur (nom, prenom) VALUES('Michaud', 'Clement');");
+
+            // Europe
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('France', 'Paris');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Espagne', 'Madrid');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Italie', 'Rome');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Allemagne', 'Berlin');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Royaume-Uni', 'Londres');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Portugal', 'Lisbonne');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Belgique', 'Bruxelles');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Suisse', 'Berne');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Grèce', 'Athènes');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Pays-Bas', 'Amsterdam');");
+
+            // Afrique
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Maroc', 'Rabat');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Algérie', 'Alger');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Sénégal', 'Dakar');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Égypte', 'Le Caire');");
+
+            // Amérique
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Canada', 'Ottawa');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('États-Unis', 'Washington');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Brésil', 'Brasilia');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Argentine', 'Buenos Aires');");
+
+            // Asie
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Chine', 'Pékin');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Japon', 'Tokyo');");
         }
     };
 }
-
