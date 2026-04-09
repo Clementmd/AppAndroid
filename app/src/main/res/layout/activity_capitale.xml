@@ -24,95 +24,69 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvProgression"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Question 1 / 5"
+            android:textColor="#BA68C8"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Quelle est la capitale de :"
             android:textColor="#2C3E50"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="22sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:text="Australie"
-            android:textColor="#2C3E50"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etCapitale1"
+            android:id="@+id/tvPays"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="5dp"
-            android:background="@android:drawable/edit_text"
-            android:hint="Ta réponse"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:text="Bali"
-            android:textColor="#2C3E50"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etCapitale2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="5dp"
-            android:background="@android:drawable/edit_text"
-            android:hint="Ta réponse"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="France"
             android:textColor="#2C3E50"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etCapitale3"
+            android:id="@+id/etReponse"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:background="@android:drawable/edit_text"
-            android:hint="Ta réponse"
-            android:padding="10dp" />
+            android:hint="Ta réponse ici..."
+            android:inputType="textCapSentences"
+            android:padding="15dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnValiderCulture"
+        <Button
+            android:id="@+id/btnValider"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="70dp"
             android:layout_marginTop="40dp"
             android:backgroundTint="#BA68C8"
-            android:text="Valider"
+            android:text="Valider la réponse"
             android:textAllCaps="false"
+            android:textSize="18sp"
             android:textColor="#FFFFFF"
             app:cornerRadius="8dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnQuitterCulture"
+        <Button
+            android:id="@+id/btnQuitter"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="70dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#BA68C8"
-            android:text="Quitter"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="90dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#BDBDBD"
+            android:text="Abandonner"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             app:cornerRadius="8dp" />

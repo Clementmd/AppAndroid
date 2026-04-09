@@ -44,7 +44,7 @@ public class DatabaseClient {
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Portugal', 'Lisbonne');");
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Belgique', 'Bruxelles');");
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Suisse', 'Berne');");
-            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Grèce', 'Athènes');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Grèce', 'Athenes');");
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Pays-Bas', 'Amsterdam');");
 
             // Afrique
@@ -60,7 +60,7 @@ public class DatabaseClient {
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Argentine', 'Buenos Aires');");
 
             // Asie
-            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Chine', 'Pékin');");
+            db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Chine', 'Pekin');");
             db.execSQL("INSERT INTO Capitale (pays, nomCapitale) VALUES ('Japon', 'Tokyo');");
         }
     };

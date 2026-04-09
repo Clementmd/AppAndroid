@@ -4,10 +4,9 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Capitale.class}, version = 1, exportSchema = false) //
 public abstract class AppDatabase extends RoomDatabase {
-
     public abstract UserDAO UserDao();
-    public abstract CapitaleDAO CapitaleDAO();
+    public abstract CapitaleDAO CapitaleDao();
 
 }

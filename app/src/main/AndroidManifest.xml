@@ -20,50 +20,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Multiplication.FauxmultiplicationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Multiplication.ReussimultiplicationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Multiplication.MultiplicationActivity"
-            android:exported="false" />
 
-        <activity
-            android:name=".Addition.FauxadditionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Addition.ReussiadditionActivity"
-            android:exported="false" />
         <activity
             android:name=".Addition.AdditionActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".Capitale.FauxCapitaleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Capitale.ReussiCapitaleActivity"
-            android:exported="false" />
         <activity
             android:name=".Capitale.CapitaleActivity"
             android:exported="false" />
         <activity
             android:name=".ExercicesActivity"
             android:exported="false" />
+
         <activity
-            android:name=".Accueil.accueilnoncoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Accueil.AccueilcoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SeconnecterActivity"
+            android:name=".Accueil.AccueilActivity"
             android:exported="false" />
         <activity
             android:name=".AddUserActivity"
             android:exported="false" />
+        <activity
+            android:name=".Capitale.ScoreCapitaleActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Multiplication.ChoixNiveauActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Multiplication.CalculActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Multiplication.ScoreMathsActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

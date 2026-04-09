@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:padding="40dp"
+        android:text="Ecole des loustics"
+        android:textColor="#2C3E50"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvProgression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Question 1 / 5"
+        android:textColor="#BA68C8"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Combien font :"
+        android:textColor="#2C3E50"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCalcul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 × 6 ="
+            android:textColor="#2C3E50"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etReponse"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:drawable/edit_text"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="?"
+            android:textColor="#BA68C8"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnValider"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#BA68C8"
+        android:text="Valider la réponse"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:cornerRadius="8dp" />
+
+    <Button
+        android:id="@+id/btnQuitter"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="10dp"
+        android:text="Abandonner"
+        android:textAllCaps="false"
+        android:textColor="#95a5a6" />
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1D5F2"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="Ecole des loustiques"
+        android:textColor="#313745"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Choisis ton niveau"
+            android:textColor="#313745"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNiveau1"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:text="Niveau 1"
+            android:textAllCaps="false"
+            android:textColor="#C450D5"
+            android:textSize="18sp"
+            app:strokeColor="#C450D5"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/btnNiveau2"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:text="Niveau 2"
+            android:textAllCaps="false"
+            android:textColor="#C450D5"
+            android:textSize="18sp"
+            app:strokeColor="#C450D5"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/btnNiveau3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="40dp"
+            android:text="Niveau 3"
+            android:textAllCaps="false"
+            android:textColor="#C450D5"
+            android:textSize="18sp"
+            app:strokeColor="#C450D5"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/btnQuitterNiveau"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#C450D5"
+            android:text="Quitter"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="4dp" />
+
+    </LinearLayout>
+</LinearLayout>

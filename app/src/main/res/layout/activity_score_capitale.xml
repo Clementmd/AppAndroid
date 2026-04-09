@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <TextView
@@ -19,47 +19,52 @@
         android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvResultatTitre"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:text="Résultats"
+        android:text="Bravo !"
         android:textColor="#2C3E50"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvScoreDetail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Félicitations"
-        android:textColor="#2C3E50"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:text="Score : 0 / 5"
+        android:textColor="#BA68C8"
+        android:textSize="24sp" />
 
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:paddingHorizontal="30dp"
-        android:text="Tu as toutes les bonnes réponses"
-        android:textColor="#2C3E50"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnChoisirAutreMaths"
+    <Button
+        android:id="@+id/btnRejouer"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="70dp"
         android:backgroundTint="#BA68C8"
-        android:text="Chosir une autre activité"
+        android:text="Rejouer"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        app:cornerRadius="8dp" />
+
+    <Button
+        android:id="@+id/btnRetourMenu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#BDBDBD"
+        android:text="Quitter"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:cornerRadius="8dp" />
 
 </LinearLayout>

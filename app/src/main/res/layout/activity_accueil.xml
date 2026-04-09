@@ -39,7 +39,7 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnMaths"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -51,7 +51,7 @@
         android:textColor="#FFFFFF"
         app:cornerRadius="8dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnCulture"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -59,6 +59,18 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#BA68C8"
         android:text="Exercices de Géographie"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="8dp" />
+
+    <Button
+        android:id="@+id/btnDeco"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#BA68C8"
+        android:text="Se deconnecter"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:cornerRadius="8dp" />
