@@ -25,16 +25,25 @@ public class AccueilActivity extends AppCompatActivity implements View.OnClickLi
     Button btnCulture;
     Button btnDeco;
     String prenom;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("PRENOM_KEY", prenom);
+        super.onSaveInstanceState(outState);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_accueil);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         tvWelcome = findViewById(R.id.tvWelcome);
         btnMaths = findViewById(R.id.btnMaths);
         btnCulture = findViewById(R.id.btnCulture);
@@ -44,7 +53,16 @@ public class AccueilActivity extends AppCompatActivity implements View.OnClickLi
         btnCulture.setOnClickListener(this);
         btnDeco.setOnClickListener(this);
 
-        prenom = getIntent().getStringExtra("USER_PRENOM");
+        if (savedInstanceState != null) {
+            prenom = savedInstanceState.getString("PRENOM_KEY");
+        } else {
+            prenom = getIntent().getStringExtra("USER_PRENOM");
+        }
+
+        if (prenom == null || prenom.equals("Anonyme") || prenom.isEmpty()) {
+            prenom = "Invité";
+        }
+
         tvWelcome.setText("Salut " + prenom + " !");
     }
     @Override

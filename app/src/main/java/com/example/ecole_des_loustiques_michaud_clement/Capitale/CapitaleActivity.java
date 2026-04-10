@@ -26,9 +26,21 @@ public class CapitaleActivity extends AppCompatActivity {
     private String prenomEleve;
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("SCORE_KEY", score);
+        outState.putInt("INDEX_KEY", indexQuestion);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capitale);
+
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt("SCORE_KEY");
+            indexQuestion = savedInstanceState.getInt("INDEX_KEY");
+        }
 
         tvProgression = findViewById(R.id.tvProgression);
         tvPays = findViewById(R.id.tvPays);

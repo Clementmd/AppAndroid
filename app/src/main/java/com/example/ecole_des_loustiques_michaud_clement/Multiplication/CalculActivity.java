@@ -1,23 +1,26 @@
 package com.example.ecole_des_loustiques_michaud_clement.Multiplication;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ecole_des_loustiques_michaud_clement.Accueil.AccueilActivity;
 import com.example.ecole_des_loustiques_michaud_clement.R;
 
 import java.util.Random;
 
-public class CalculActivity extends AppCompatActivity {
-
+public class CalculActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvProgression, tvCalcul;
     private EditText etReponse;
     private Button btnValider;
+
+    private Button btnQuitter;
 
     private int niveau, score = 0, indexQuestion = 1;
     private int nombreA, nombreB, resultatAttendu;
@@ -28,17 +31,44 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
-        prenom = getIntent().getStringExtra("USER_PRENOM");
-        niveau = getIntent().getIntExtra("NIVEAU", 1);
-
         tvProgression = findViewById(R.id.tvProgression);
         tvCalcul = findViewById(R.id.tvCalcul);
         etReponse = findViewById(R.id.etReponse);
         btnValider = findViewById(R.id.btnValider);
+        btnQuitter = findViewById(R.id.btnQuitter);
 
-        genererQuestion();
+        if (savedInstanceState != null) {
+            score = savedInstanceState.getInt("STATE_SCORE");
+            indexQuestion = savedInstanceState.getInt("STATE_INDEX");
+            prenom = savedInstanceState.getString("STATE_PRENOM");
+            niveau = savedInstanceState.getInt("STATE_NIVEAU");
 
-        btnValider.setOnClickListener(v -> verifierReponse());
+            nombreA = savedInstanceState.getInt("STATE_NA");
+            nombreB = savedInstanceState.getInt("STATE_NB");
+            resultatAttendu = nombreA * nombreB;
+
+            tvProgression.setText("Question " + indexQuestion + " / 5");
+            tvCalcul.setText(nombreA + "  x  " + nombreB + "  =  ?");
+        } else {
+            prenom = getIntent().getStringExtra("USER_PRENOM");
+            niveau = getIntent().getIntExtra("NIVEAU", 1);
+            genererQuestion();
+        }
+
+        btnQuitter.setOnClickListener(this);
+        btnValider.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("STATE_SCORE", score);
+        outState.putInt("STATE_INDEX", indexQuestion);
+        outState.putString("STATE_PRENOM", prenom);
+        outState.putInt("STATE_NIVEAU", niveau);
+        outState.putInt("STATE_NA", nombreA);
+        outState.putInt("STATE_NB", nombreB);
+
+        super.onSaveInstanceState(outState);
     }
 
     private void genererQuestion() {
@@ -54,7 +84,6 @@ public class CalculActivity extends AppCompatActivity {
         }
         nombreA = random.nextInt(3) + min;
         nombreB = random.nextInt(3) + min;
-
         resultatAttendu = nombreA * nombreB;
 
         tvProgression.setText("Question " + indexQuestion + " / 5");
@@ -82,6 +111,21 @@ public class CalculActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(this, ScoreMathsActivity.class);
             intent.putExtra("SCORE_FINAL", score);
+            intent.putExtra("USER_PRENOM", prenom);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+
+        if (id == R.id.btnValider) {
+            verifierReponse();
+        }
+        else if (id == R.id.btnQuitter) {
+            Intent intent = new Intent(CalculActivity.this, ChoixNiveauActivity.class);
             intent.putExtra("USER_PRENOM", prenom);
             startActivity(intent);
             finish();

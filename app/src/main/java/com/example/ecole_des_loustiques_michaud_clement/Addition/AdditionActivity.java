@@ -29,10 +29,22 @@ public class AdditionActivity extends AppCompatActivity implements View.OnClickL
     private int resultatAttendu;
     private String prenom;
 
+
+    // Sauvegarde les données AVANT que l'activité ne soit arrêtée
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("INDEX_KEY", indexQuestion);
+        super.onSaveInstanceState(outState);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition);
+
+        if (savedInstanceState != null) {
+            indexQuestion = savedInstanceState.getInt("INDEX_KEY");
+        }
 
         prenom = getIntent().getStringExtra("USER_PRENOM");
 
